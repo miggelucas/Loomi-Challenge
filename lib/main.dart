@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loomi_challenge/src/features/home/presentation/components/home_card_component.dart';
 
 void main() {
   runApp(const MainApp());
@@ -12,7 +13,11 @@ class MainApp extends StatelessWidget {
     return const MaterialApp(
       home: Scaffold(
         body: Center(
-          child: Text('Hello World!'),
+          child: HomeCardComponent(
+              title: "Example",
+              subtitle: "Example subtitle a little bit longer",
+              imageUrl: "assets/images/home_card_nba_placeholder.png",
+              backgroundColor: Colors.blue),
         ),
       ),
     );
