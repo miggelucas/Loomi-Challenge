@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loomi_challenge/src/features/home/presentation/components/home_main_carrousel/widgets/home_main_carrousel.dart';
+import 'package:loomi_challenge/src/features/home/presentation/components/tournaments_carrousel/model/tournament_card_model.dart';
+import 'package:loomi_challenge/src/features/home/presentation/components/tournaments_carrousel/widgets/tournament_card.dart';
 
 void main() {
   runApp(const MainApp());
@@ -11,9 +13,10 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-          appBar: AppBar(title: const Text('Home View')),
-          body: HomeCardCarousel()),
-    );
+        home: Scaffold(
+            appBar: AppBar(title: const Text('Home View')),
+            body: TournamentCard(
+              tournamentCard: TournamentCardModelExtension.sample,
+            )));
   }
 }
