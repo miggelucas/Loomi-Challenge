@@ -5,13 +5,16 @@ import 'package:loomi_challenge/src/features/home/presentation/components/home_m
 import 'package:loomi_challenge/src/features/home/presentation/components/home_main_carrousel/widgets/home_card_component.dart';
 
 class HomeCardCarousel extends StatelessWidget {
+  const HomeCardCarousel({super.key});
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
         create: (_) => HomeCardBloc(),
-        child: Column(
+        child: const Column(
           children: [
             HomeCardSectionList(),
+            SizedBox(height: 28),
             HomeCardList(),
           ],
         ));
@@ -19,6 +22,8 @@ class HomeCardCarousel extends StatelessWidget {
 }
 
 class HomeCardSectionList extends StatelessWidget {
+  const HomeCardSectionList({super.key});
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<HomeCardBloc, HomeCardState>(builder: (context, state) {
@@ -64,12 +69,14 @@ class HomeCardSectionList extends StatelessWidget {
 }
 
 class HomeCardList extends StatelessWidget {
+  const HomeCardList({super.key});
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<HomeCardBloc, HomeCardState>(
       builder: (context, state) {
         print('State updated: ${state.selectedSection}');
-        return Container(
+        return SizedBox(
           height: HomeCardComponent.height,
           child: ListView(
             scrollDirection: Axis.horizontal,

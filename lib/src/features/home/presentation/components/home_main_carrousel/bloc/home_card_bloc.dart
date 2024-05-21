@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
 import 'package:loomi_challenge/src/core/extensions/colors.dart';
 import 'package:loomi_challenge/src/features/home/presentation/components/home_main_carrousel/model/home_card_model.dart';
 import 'package:loomi_challenge/src/features/home/presentation/components/home_main_carrousel/model/home_card_section.dart';
@@ -13,7 +14,7 @@ class HomeCardBloc extends Bloc<HomeCardEvent, HomeCardState> {
     HomeCardModel(
       title: 'Campeonatos populares',
       subtitle: '',
-      imageUrl: 'assets/images/home_card_nba_placeholder.png',
+      imageUrl: 'assets/images/home_card_popular_tournaments.png',
       backgroundColor: HexColor.fromHex('#F5D70A'),
       section: HomeCardSection.futebol,
     ),
@@ -27,8 +28,8 @@ class HomeCardBloc extends Bloc<HomeCardEvent, HomeCardState> {
     HomeCardModel(
       title: 'League of Legends',
       subtitle: '',
-      imageUrl: 'assets/images/home_card_nba_placeholder.png',
-      backgroundColor: HexColor.fromHex("#C4B23A33"),
+      imageUrl: 'assets/images/home_card_league_of_legends.png',
+      backgroundColor: Color.fromRGBO(241, 238, 216, 1),
       section: HomeCardSection.eEsports,
     ),
   ];

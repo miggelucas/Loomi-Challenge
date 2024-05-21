@@ -21,6 +21,8 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/home_card_nba_placeholder.png
+    - assets/images/home_card_league_of_legends.png
+    - assets/images/home_card_popular_tournaments.png
     - assets/images/basketball_icon.png
     - assets/images/soccer_icon.png
     - assets/images/whistle_icon.png
