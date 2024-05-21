@@ -1,10 +1,10 @@
 name: loomi_challenge
 description: "A new Flutter project."
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0
 
 environment:
-  sdk: '>=3.3.4 <4.0.0'
+  sdk: ">=3.3.4 <4.0.0"
 
 dependencies:
   flutter:
@@ -21,7 +21,10 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/home_card_nba_placeholder.png
-
+    - assets/images/basketball_icon.png
+    - assets/images/soccer_icon.png
+    - assets/images/whistle_icon.png
+    - assets/images/eesports_icon.png
 
   fonts:
     - family: Montserrat

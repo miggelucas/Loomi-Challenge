@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
+import 'package:loomi_challenge/src/core/extensions/colors.dart';
 import 'package:loomi_challenge/src/features/home/presentation/components/home_main_carrousel/model/home_card_model.dart';
 import 'package:loomi_challenge/src/features/home/presentation/components/home_main_carrousel/model/home_card_section.dart';
 import 'package:loomi_challenge/src/features/home/presentation/components/home_main_carrousel/widgets/home_card_component.dart';
@@ -11,32 +11,25 @@ part 'home_card_state.dart';
 class HomeCardBloc extends Bloc<HomeCardEvent, HomeCardState> {
   final List<HomeCardModel> allCards = [
     HomeCardModel(
-      title: 'Card 1',
-      subtitle: 'Subtitle 1',
+      title: 'Campeonatos populares',
+      subtitle: '',
       imageUrl: 'assets/images/home_card_nba_placeholder.png',
-      backgroundColor: Colors.blue,
+      backgroundColor: HexColor.fromHex('#F5D70A'),
       section: HomeCardSection.futebol,
     ),
     HomeCardModel(
-      title: 'Card 2',
-      subtitle: 'Subtitle 2',
+      title: 'NBA',
+      subtitle: 'Nation Basketball Association',
       imageUrl: 'assets/images/home_card_nba_placeholder.png',
-      backgroundColor: Colors.red,
+      backgroundColor: HexColor.fromHex("#C0C4C2"),
       section: HomeCardSection.basket,
     ),
     HomeCardModel(
-      title: 'Card 3',
-      subtitle: 'Subtitle 3',
+      title: 'League of Legends',
+      subtitle: '',
       imageUrl: 'assets/images/home_card_nba_placeholder.png',
-      backgroundColor: Colors.green,
+      backgroundColor: HexColor.fromHex("#C4B23A33"),
       section: HomeCardSection.eEsports,
-    ),
-    HomeCardModel(
-      title: 'Card 4',
-      subtitle: 'Subtitle 4',
-      imageUrl: 'assets/images/home_card_nba_placeholder.png',
-      backgroundColor: Colors.orange,
-      section: HomeCardSection.futebol,
     ),
   ];
 
@@ -45,6 +38,7 @@ class HomeCardBloc extends Bloc<HomeCardEvent, HomeCardState> {
       final filteredCards = event.section == HomeCardSection.all
           ? allCards
           : allCards.where((card) => card.section == event.section).toList();
+
       emit(HomeCardState(event.section, filteredCards));
     });
 

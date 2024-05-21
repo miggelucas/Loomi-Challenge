@@ -5,58 +5,83 @@ import 'package:loomi_challenge/src/features/home/presentation/components/home_m
 import 'package:loomi_challenge/src/features/home/presentation/components/home_main_carrousel/widgets/home_card_component.dart';
 
 class HomeCardCarousel extends StatelessWidget {
-  const HomeCardCarousel({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => HomeCardBloc(),
-      child: Column(
-        children: [
-          Container(
-            height: 50,
-            padding: const EdgeInsets.symmetric(vertical: 8.0),
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              children: HomeCardSection.values.map((section) {
-                return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                  child: ChoiceChip(
-                    label: Text(section.name),
-                    selected:
-                        context.watch<HomeCardBloc>().state.selectedSection ==
-                            section,
-                    onSelected: (selected) {
-                      if (selected) {
-                        context
-                            .read<HomeCardBloc>()
-                            .add(SelectSectionEvent(section));
-                      }
-                    },
+        create: (_) => HomeCardBloc(),
+        child: Column(
+          children: [
+            HomeCardSectionList(),
+            HomeCardList(),
+          ],
+        ));
+  }
+}
+
+class HomeCardSectionList extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<HomeCardBloc, HomeCardState>(builder: (context, state) {
+      return Container(
+          height: 48,
+          padding: const EdgeInsets.symmetric(vertical: 8.0),
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            children: HomeCardSection.values.map((section) {
+              final bool isSelected = state.selectedSection == section;
+
+              return Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                child: TextButton(
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Image.asset(
+                        section.imageAsset,
+                        color: isSelected ? Colors.black : Colors.grey,
+                        height: 24,
+                      ),
+                      SizedBox(width: 8),
+                      Text(
+                        section.name,
+                        style: TextStyle(
+                          color: isSelected ? Colors.black : Colors.grey,
+                        ),
+                      ),
+                    ],
                   ),
-                );
-              }).toList(),
-            ),
+                  onPressed: () {
+                    context
+                        .read<HomeCardBloc>()
+                        .add(SelectSectionEvent(section));
+                  },
+                ),
+              );
+            }).toList(),
+          ));
+    });
+  }
+}
+
+class HomeCardList extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<HomeCardBloc, HomeCardState>(
+      builder: (context, state) {
+        print('State updated: ${state.selectedSection}');
+        return Container(
+          height: HomeCardComponent.height,
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            children: state.cards.map((card) {
+              return Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12),
+                child: HomeCardComponent(card: card),
+              );
+            }).toList(),
           ),
-          Container(
-            height: HomeCardComponent.height,
-            clipBehavior: Clip.none,
-            child: BlocBuilder<HomeCardBloc, HomeCardState>(
-              builder: (context, state) {
-                return ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: state.cards
-                        .map((card) => Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 12),
-                              child: HomeCardComponent(card: card),
-                            ))
-                        .toList());
-              },
-            ),
-          ),
-        ],
-      ),
+        );
+      },
     );
   }
 }

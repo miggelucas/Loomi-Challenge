@@ -7,9 +7,5 @@ class HomeCardState extends Equatable {
   const HomeCardState(this.selectedSection, this.cards);
 
   @override
-  List<Object> get props => [];
-}
-
-final class HomeCardInitial extends HomeCardState {
-  HomeCardInitial(super.selectedSection, super.cards);
+  List<Object> get props => [selectedSection, cards];
 }
