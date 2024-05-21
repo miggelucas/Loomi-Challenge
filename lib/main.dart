@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:loomi_challenge/src/features/home/presentation/components/home_card_component.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:loomi_challenge/src/features/home/presentation/components/home_main_carrousel/bloc/home_card_bloc.dart';
+import 'package:loomi_challenge/src/features/home/presentation/components/home_main_carrousel/widgets/home_card_component.dart';
+import 'package:loomi_challenge/src/features/home/presentation/components/home_main_carrousel/widgets/home_main_carrousel.dart';
 
 void main() {
   runApp(const MainApp());
@@ -10,14 +13,12 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       home: Scaffold(
-        body: Center(
-          child: HomeCardComponent(
-              title: "Example",
-              subtitle: "Example subtitle a little bit longer",
-              imageUrl: "assets/images/home_card_nba_placeholder.png",
-              backgroundColor: Colors.blue),
+        appBar: AppBar(title: const Text('Home')),
+        body: BlocProvider(
+          create: (context) => HomeCardBloc(),
+          child: const HomeCardCarousel(),
         ),
       ),
     );

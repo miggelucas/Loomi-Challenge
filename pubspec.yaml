@@ -9,6 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_bloc: ^8.0.0
+  equatable: ^2.0.3
 
 dev_dependencies:
   flutter_test:
@@ -20,7 +22,7 @@ flutter:
   assets:
     - assets/images/home_card_nba_placeholder.png
 
-    
+
   fonts:
     - family: Montserrat
       fonts:

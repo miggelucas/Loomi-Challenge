@@ -1,19 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:loomi_challenge/src/core/utils/custom_textstyles.dart';
+import 'package:loomi_challenge/src/features/home/presentation/components/home_main_carrousel/model/home_card_model.dart';
 
 class HomeCardComponent extends StatelessWidget {
-  final String title;
-  final String subtitle;
-  final String imageUrl;
-  final Color backgroundColor;
+  final HomeCardModel card;
 
   const HomeCardComponent({
     super.key,
-    required this.title,
-    required this.subtitle,
-    required this.imageUrl,
-    required this.backgroundColor,
+    required this.card,
   });
 
   static const double width = 270;
@@ -22,20 +17,22 @@ class HomeCardComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      clipBehavior: Clip.none,
       width: width,
       height: height,
       decoration: BoxDecoration(
-        color: backgroundColor,
+        color: card.backgroundColor,
         borderRadius: BorderRadius.circular(36),
       ),
       child: Stack(
+        clipBehavior: Clip.none,
         children: [
           OverflowBox(
             maxHeight: height + 20,
             maxWidth: width * 0.9,
             alignment: Alignment.bottomRight,
             child: Image.asset(
-              imageUrl,
+              card.imageUrl,
               fit: BoxFit.fitWidth,
               alignment: Alignment.bottomRight,
             ),
@@ -49,11 +46,11 @@ class HomeCardComponent extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    title,
+                    card.title,
                     style: CustomTextSyle.headline4,
                   ),
                   const SizedBox(height: 4.0),
-                  Text(subtitle, style: CustomTextSyle.caption2),
+                  Text(card.subtitle, style: CustomTextSyle.caption2),
                 ],
               ),
             ),
