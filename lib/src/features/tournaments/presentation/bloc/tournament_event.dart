@@ -6,3 +6,5 @@ sealed class TournamentEvent extends Equatable {
   @override
   List<Object> get props => [];
 }
+
+class TournamentFetch extends TournamentEvent {}

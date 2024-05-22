@@ -7,12 +7,13 @@ class FetchTournament {
   FetchTournament();
 
   Future<List<TournamentCardModel>> call() async {
+    await Future.delayed(Duration(seconds: 2));
+
     return [
       TournamentCardModelExtension.sample,
       TournamentCardModelExtension.sample,
       TournamentCardModelExtension.sample,
       TournamentCardModelExtension.sample,
     ];
-    // return await repository.fetchTournamentCards();
   }
 }
