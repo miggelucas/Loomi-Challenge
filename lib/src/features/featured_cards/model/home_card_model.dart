@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:loomi_challenge/src/features/home/presentation/components/home_main_carrousel/model/home_card_section.dart';
+import 'package:loomi_challenge/src/features/featured_cards/model/home_card_section.dart';
 
 class HomeCardModel {
   final String title;

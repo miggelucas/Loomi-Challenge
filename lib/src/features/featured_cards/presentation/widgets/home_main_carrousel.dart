@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:loomi_challenge/src/features/home/presentation/components/home_main_carrousel/bloc/home_card_bloc.dart';
-import 'package:loomi_challenge/src/features/home/presentation/components/home_main_carrousel/model/home_card_section.dart';
-import 'package:loomi_challenge/src/features/home/presentation/components/home_main_carrousel/widgets/home_card_component.dart';
+import 'package:loomi_challenge/src/features/featured_cards/presentation/bloc/home_card_bloc.dart';
+import 'package:loomi_challenge/src/features/featured_cards/model/home_card_section.dart';
+import 'package:loomi_challenge/src/features/featured_cards/presentation/widgets/home_card_component.dart';
 
 class HomeCardCarousel extends StatelessWidget {
   const HomeCardCarousel({super.key});

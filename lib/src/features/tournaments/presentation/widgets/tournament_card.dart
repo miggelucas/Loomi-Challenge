@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:loomi_challenge/src/features/home/presentation/components/tournaments_carrousel/model/tournament_card_model.dart';
+import 'package:loomi_challenge/src/features/tournaments/model/tournament_card_model.dart';
 
 class TournamentCard extends StatelessWidget {
   final TournamentCardModel tournamentCard;

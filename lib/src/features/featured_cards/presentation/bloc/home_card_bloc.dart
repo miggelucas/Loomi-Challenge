@@ -2,9 +2,8 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:loomi_challenge/src/core/extensions/colors.dart';
-import 'package:loomi_challenge/src/features/home/presentation/components/home_main_carrousel/model/home_card_model.dart';
-import 'package:loomi_challenge/src/features/home/presentation/components/home_main_carrousel/model/home_card_section.dart';
-import 'package:loomi_challenge/src/features/home/presentation/components/home_main_carrousel/widgets/home_card_component.dart';
+import 'package:loomi_challenge/src/features/featured_cards/model/home_card_model.dart';
+import 'package:loomi_challenge/src/features/featured_cards/model/home_card_section.dart';
 
 part 'home_card_event.dart';
 part 'home_card_state.dart';

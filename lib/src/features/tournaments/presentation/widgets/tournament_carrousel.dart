@@ -1,15 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:loomi_challenge/src/core/utils/custom_textstyles.dart';
-import 'package:loomi_challenge/src/features/home/presentation/components/tournaments_carrousel/model/tournament_card_model.dart';
-import 'package:loomi_challenge/src/features/home/presentation/components/tournaments_carrousel/widgets/tournament_card.dart';
+import 'package:loomi_challenge/src/features/tournaments/presentation/widgets/tournament_card.dart';
 
 class TournamentCarrousel extends StatelessWidget {
-  final List<TournamentCardModel> tournamentModels = [
-    TournamentCardModelExtension.sample,
-    TournamentCardModelExtension.sample,
-    TournamentCardModelExtension.sample,
-    TournamentCardModelExtension.sample,
-  ];
+  final List tournamentModels = [];
 
   TournamentCarrousel({super.key});
 

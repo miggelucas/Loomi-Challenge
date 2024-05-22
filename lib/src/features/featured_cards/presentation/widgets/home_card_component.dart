@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:loomi_challenge/src/core/utils/custom_textstyles.dart';
-import 'package:loomi_challenge/src/features/home/presentation/components/home_main_carrousel/model/home_card_model.dart';
+import 'package:loomi_challenge/src/features/featured_cards/model/home_card_model.dart';
 
 class HomeCardComponent extends StatelessWidget {
   final HomeCardModel card;
