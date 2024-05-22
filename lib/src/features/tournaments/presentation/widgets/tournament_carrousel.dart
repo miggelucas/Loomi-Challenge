@@ -45,8 +45,7 @@ class _TournamentCarrouselState extends State<TournamentCarrousel> {
               children: [
                 Text(
                   "Campeonatos populares",
-                  style: CustomTextSyle
-                      .headline4, // Substitua por CustomTextSyle.headline4 se estiver definido
+                  style: CustomTextSyle.headline4,
                 ),
                 const SizedBox(
                   height: 12,

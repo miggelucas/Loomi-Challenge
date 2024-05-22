@@ -1,19 +1,22 @@
+import 'package:loomi_challenge/src/features/tournaments/data/model/tournament_model.dart';
+import 'package:loomi_challenge/src/features/tournaments/data/repository/tournament_repository.dart';
 import 'package:loomi_challenge/src/features/tournaments/model/tournament_card_model.dart';
 
-class FetchTournament {
-  // final TournamentRepository repository;
+abstract class TournamentRepositoryProtocol {
+  Future<List<TournamentModel>> fetchTournaments();
+}
 
-  // FetchTournament(this.repository);
+class FetchTournament {
+  final TournamentRepositoryProtocol repository = TournamentRepository();
+
   FetchTournament();
 
   Future<List<TournamentCardModel>> call() async {
-    await Future.delayed(Duration(seconds: 2));
+    final tournamentModels = await repository.fetchTournaments();
 
-    return [
-      TournamentCardModelExtension.sample,
-      TournamentCardModelExtension.sample,
-      TournamentCardModelExtension.sample,
-      TournamentCardModelExtension.sample,
-    ];
+    return tournamentModels
+        .map(
+            (model) => TournamentCardModel(id: model.id, imageUrl: model.image))
+        .toList();
   }
 }

@@ -22,8 +22,7 @@ class TournamentCard extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(15.0),
         child: CachedNetworkImage(
-          fit: BoxFit
-              .cover, // Ajusta a imagem para preencher o espaço disponível
+          fit: BoxFit.cover,
           imageUrl: tournamentCard.imageUrl,
           placeholder: (context, url) => const CircularProgressIndicator(),
           errorWidget: (context, url, error) => const Icon(Icons.error),
