@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:loomi_challenge/src/core/utils/custom_textstyles.dart';
-import 'package:loomi_challenge/src/features/tournaments/domain/fetch_tournaments.dart';
+import 'package:loomi_challenge/src/features/tournaments/domain/usecases/fetch_tournaments.dart';
 import 'package:loomi_challenge/src/features/tournaments/presentation/bloc/tournament_bloc.dart';
 import 'package:loomi_challenge/src/features/tournaments/presentation/widgets/tournament_card.dart';
 
