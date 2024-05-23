@@ -7,7 +7,7 @@ part 'tournament_event.dart';
 part 'tournament_state.dart';
 
 class TournamentBloc extends Bloc<TournamentEvent, TournamentState> {
-  final FetchTournament fetchTournamentCards;
+  final FetchTournamentProtocol fetchTournamentCards;
 
   TournamentBloc({required this.fetchTournamentCards})
       : super(TournamentLoading()) {

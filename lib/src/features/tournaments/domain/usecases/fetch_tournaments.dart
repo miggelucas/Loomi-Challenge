@@ -1,7 +1,5 @@
 import 'package:dartz/dartz.dart';
 import 'package:loomi_challenge/src/core/error/failure.dart';
-import 'package:loomi_challenge/src/features/tournaments/data/model/tournament_model.dart';
-import 'package:loomi_challenge/src/features/tournaments/data/repository/tournament_repository.dart';
 import 'package:loomi_challenge/src/features/tournaments/domain/repositories/tournament_repository_protocol.dart';
 import 'package:loomi_challenge/src/features/tournaments/presentation/model/tournament_card_model.dart';
 
@@ -10,9 +8,9 @@ abstract class FetchTournamentProtocol {
 }
 
 class FetchTournament implements FetchTournamentProtocol {
-  final TournamentRepositoryProtocol repository = TournamentRepository();
+  final TournamentRepositoryProtocol repository;
 
-  FetchTournament();
+  FetchTournament({required this.repository});
 
   @override
   Future<Either<Failure, List<TournamentCardModel>>> call() async {
