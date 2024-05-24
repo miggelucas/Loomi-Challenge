@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loomi_challenge/src/core/extensions/colors.dart';
 import 'package:loomi_challenge/src/features/featured_cards/presentation/widgets/home_main_carrousel.dart';
-import 'package:loomi_challenge/src/features/tips/presentation/widgets/tip_carroulsel.dart';
+import 'package:loomi_challenge/src/features/tips/presentation/widgets/tip_carousel.dart';
 import 'package:loomi_challenge/src/features/tournaments/presentation/widgets/tournament_carrousel.dart';
 
 class HomePage extends StatelessWidget {
@@ -24,6 +24,7 @@ class HomePage extends StatelessWidget {
           SafeArea(
             left: false,
             right: false,
+            bottom: false,
             child: Center(
               child: ListView(
                 children: [
@@ -34,7 +35,7 @@ class HomePage extends StatelessWidget {
                   const SizedBox(height: 32),
                   const TournamentCarrousel(),
                   const SizedBox(height: 32),
-                  TipCarroulsel()
+                  // const TipCarousel()
                 ],
               ),
             ),

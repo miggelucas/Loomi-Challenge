@@ -10,4 +10,13 @@ class TipModel {
     required this.description,
     required this.imageUrl,
   });
+
+  factory TipModel.fromJson(Map<String, dynamic> json) {
+    return TipModel(
+      id: json['id'],
+      title: json['title'],
+      description: json['description'],
+      imageUrl: json['imageUrl'],
+    );
+  }
 }

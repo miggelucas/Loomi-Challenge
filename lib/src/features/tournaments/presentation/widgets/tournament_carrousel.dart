@@ -19,7 +19,7 @@ class _TournamentCarrouselState extends State<TournamentCarrousel> {
   void initState() {
     super.initState();
     _tournamentBloc = getIt<TournamentBloc>();
-    _tournamentBloc.add(TournamentFetch());
+    _tournamentBloc.add(TournamentFetchEvent());
   }
 
   @override

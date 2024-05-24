@@ -11,11 +11,11 @@ class TournamentBloc extends Bloc<TournamentEvent, TournamentState> {
 
   TournamentBloc({required this.fetchTournamentCards})
       : super(TournamentLoading()) {
-    on<TournamentFetch>(_onTournamentFetch);
+    on<TournamentFetchEvent>(_onTournamentFetch);
   }
 
   Future<void> _onTournamentFetch(
-      TournamentFetch event, Emitter<TournamentState> emit) async {
+      TournamentFetchEvent event, Emitter<TournamentState> emit) async {
     emit(TournamentLoading());
 
     final result = await fetchTournamentCards();

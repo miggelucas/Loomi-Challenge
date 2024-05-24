@@ -7,4 +7,4 @@ sealed class TournamentEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class TournamentFetch extends TournamentEvent {}
+class TournamentFetchEvent extends TournamentEvent {}
