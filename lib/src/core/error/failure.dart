@@ -10,5 +10,5 @@ abstract class Failure extends Equatable {
 }
 
 class ServerFailure extends Failure {
-  ServerFailure({required super.message});
+  ServerFailure() : super(message: 'Failed to load tournaments');
 }

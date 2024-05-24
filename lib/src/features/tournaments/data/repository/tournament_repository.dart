@@ -15,7 +15,7 @@ class TournamentRepository implements TournamentRepositoryProtocol {
       final tournaments = await remoteDatasource.fetchTournaments();
       return Right(tournaments);
     } on ServerFailure {
-      return Left(ServerFailure(message: 'Failed to load tournaments'));
+      return Left(ServerFailure());
     }
   }
 }

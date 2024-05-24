@@ -31,13 +31,12 @@ void main() {
 
   test('should return a Failure if repository call is unsuccessful', () async {
     // arrange
-    const String message = 'Failed to load tournaments';
     when(() => mockTournamentsRepository.fetchTournaments())
-        .thenAnswer((_) async => Left(ServerFailure(message: message)));
+        .thenAnswer((_) async => Left(ServerFailure()));
     // act
     final result = await fetchTournament();
     // assert
-    expect(result, Left(ServerFailure(message: message)));
+    expect(result, Left(ServerFailure()));
   });
 
   test(
