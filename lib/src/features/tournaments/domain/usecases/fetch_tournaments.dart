@@ -17,7 +17,7 @@ class FetchTournament implements FetchTournamentProtocol {
     final result = await repository.fetchTournaments();
 
     return result.fold(
-      (failure) => Left(failure),
+      (failure) => Left(ServerFailure(message: failure.message)),
       (tournaments) => Right(tournaments
           .map((model) =>
               TournamentCardModel(id: model.id, imageUrl: model.image))

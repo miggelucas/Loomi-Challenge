@@ -1,4 +1,6 @@
-class TournamentCardModel {
+import 'package:equatable/equatable.dart';
+
+class TournamentCardModel extends Equatable {
   final String id;
   final String imageUrl;
 
@@ -6,6 +8,9 @@ class TournamentCardModel {
     required this.id,
     required this.imageUrl,
   });
+
+  @override
+  List<Object> get props => [id, imageUrl];
 }
 
 extension TournamentCardModelExtension on TournamentCardModel {

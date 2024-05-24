@@ -1,4 +1,4 @@
-import 'package:loomi_challenge/src/core/error/failure.dart';
+import 'package:loomi_challenge/src/core/error/exception.dart';
 import 'package:loomi_challenge/src/features/tournaments/data/model/tournament_model.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -21,7 +21,7 @@ class TournamentRemoteDataSource implements TournamentDataSourceProtocol {
       List<dynamic> data = json.decode(response.body);
       return data.map((json) => TournamentModel.fromJson(json)).toList();
     } else {
-      throw ServerFailure(message: 'Failed to load tournaments');
+      throw ServerException();
     }
   }
 }

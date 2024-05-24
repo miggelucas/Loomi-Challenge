@@ -75,7 +75,6 @@ class HomeCardList extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<HomeCardBloc, HomeCardState>(
       builder: (context, state) {
-        print('State updated: ${state.selectedSection}');
         return SizedBox(
           height: HomeCardComponent.height,
           child: ListView(

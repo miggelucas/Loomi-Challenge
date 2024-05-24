@@ -11,6 +11,13 @@ class TournamentModel {
     required this.createdAt,
   });
 
+  TournamentModel.optional({
+    required this.id,
+    this.name = 'default_name',
+    required this.image,
+    DateTime? createdAt,
+  }) : createdAt = createdAt ?? DateTime.now();
+
   factory TournamentModel.fromJson(Map<String, dynamic> json) {
     return TournamentModel(
       id: json['id'],
