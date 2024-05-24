@@ -59,6 +59,11 @@ void main() {
         .toList();
 
     expect(result.isRight(), true);
-    expect(expectedResult, equals(expectedResult));
+    result.fold(
+      (failure) => fail('Should not return a failure'),
+      (tournaments) {
+        expect(tournaments, expectedResult);
+      },
+    );
   });
 }

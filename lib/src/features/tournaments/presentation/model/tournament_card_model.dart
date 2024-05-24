@@ -10,7 +10,7 @@ class TournamentCardModel extends Equatable {
   });
 
   @override
-  List<Object> get props => [id, imageUrl];
+  List<Object> get props => [id];
 }
 
 extension TournamentCardModelExtension on TournamentCardModel {
