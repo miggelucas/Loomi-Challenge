@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:loomi_challenge/src/core/utils/custom_textstyles.dart';
 import 'package:loomi_challenge/src/features/featured_cards/presentation/bloc/home_card_bloc.dart';
 import 'package:loomi_challenge/src/features/featured_cards/model/home_card_section.dart';
 import 'package:loomi_challenge/src/features/featured_cards/presentation/widgets/home_card_component.dart';
@@ -29,7 +30,7 @@ class HomeCardSectionList extends StatelessWidget {
     return BlocBuilder<HomeCardBloc, HomeCardState>(builder: (context, state) {
       return Container(
           height: 48,
-          padding: const EdgeInsets.symmetric(vertical: 8.0),
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: ListView(
             scrollDirection: Axis.horizontal,
             children: HomeCardSection.values.map((section) {
@@ -49,9 +50,8 @@ class HomeCardSectionList extends StatelessWidget {
                       SizedBox(width: 8),
                       Text(
                         section.name,
-                        style: TextStyle(
-                          color: isSelected ? Colors.black : Colors.grey,
-                        ),
+                        style: CustomTextSyle.caption3.copyWith(
+                            color: isSelected ? Colors.black : Colors.grey),
                       ),
                     ],
                   ),
@@ -77,15 +77,34 @@ class HomeCardList extends StatelessWidget {
       builder: (context, state) {
         return SizedBox(
           height: HomeCardComponent.height,
-          child: ListView(
+          child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            children: state.cards.map((card) {
+            itemCount: state.cards.length,
+            itemBuilder: (context, index) {
               return Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12),
-                child: HomeCardComponent(card: card),
+                padding: () {
+                  if (index == 0) {
+                    return const EdgeInsets.only(left: 24, right: 6);
+                  } else if (index == state.cards.length - 1) {
+                    return const EdgeInsets.only(left: 6, right: 24);
+                  } else {
+                    return const EdgeInsets.symmetric(horizontal: 6);
+                  }
+                }(),
+                child: HomeCardComponent(card: state.cards[index]),
               );
-            }).toList(),
+            },
           ),
+
+          // ListView(
+          //   scrollDirection: Axis.horizontal,
+          //   children: state.cards.map((card) {
+          //     return Padding(
+          //       padding: const EdgeInsets.symmetric(horizontal: 12),
+          //       child: HomeCardComponent(card: card),
+          //     );
+          //   }).toList(),
+          // ),
         );
       },
     );

@@ -43,25 +43,37 @@ class _TournamentCarrouselState extends State<TournamentCarrousel> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  "Campeonatos populares",
-                  style: CustomTextSyle.headline4,
+                Padding(
+                  padding: const EdgeInsets.only(left: 32),
+                  child: Text(
+                    "Campeonatos populares",
+                    style: CustomTextSyle.headline4,
+                  ),
                 ),
                 const SizedBox(
                   height: 12,
                 ),
                 SizedBox(
                   height: 80,
-                  child: ListView(
+                  child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    children: state.tournaments.map((model) {
+                    itemCount: state.tournaments.length,
+                    itemBuilder: (context, index) {
                       return Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 4),
+                        padding: () {
+                          if (index == 0) {
+                            return const EdgeInsets.only(left: 16, right: 4);
+                          } else if (index == state.tournaments.length - 1) {
+                            return const EdgeInsets.only(left: 4, right: 16);
+                          } else {
+                            return const EdgeInsets.symmetric(horizontal: 4);
+                          }
+                        }(),
                         child: TournamentCard(
-                          tournamentCard: model,
+                          tournamentCard: state.tournaments[index],
                         ),
                       );
-                    }).toList(),
+                    },
                   ),
                 )
               ],

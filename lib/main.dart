@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loomi_challenge/src/core/utils/service_locator.dart';
-import 'package:loomi_challenge/src/features/tournaments/presentation/widgets/tournament_carrousel.dart';
+import 'package:loomi_challenge/src/features/home/presentation/home_page.dart';
 
 void main() {
   setupLocator();
@@ -12,9 +12,6 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(
-            appBar: AppBar(title: const Text('Home View')),
-            body: const TournamentCarrousel()));
+    return MaterialApp(home: HomePage());
   }
 }

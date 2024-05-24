@@ -33,6 +33,7 @@ flutter:
     - assets/images/soccer_icon.png
     - assets/images/whistle_icon.png
     - assets/images/eesports_icon.png
+    - assets/images/imperio_label.png
 
   fonts:
     - family: Montserrat
