@@ -95,16 +95,6 @@ class HomeCardList extends StatelessWidget {
               );
             },
           ),
-
-          // ListView(
-          //   scrollDirection: Axis.horizontal,
-          //   children: state.cards.map((card) {
-          //     return Padding(
-          //       padding: const EdgeInsets.symmetric(horizontal: 12),
-          //       child: HomeCardComponent(card: card),
-          //     );
-          //   }).toList(),
-          // ),
         );
       },
     );
