@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+class CustomColors {
+  static Color get imperioYellow => const Color.fromRGBO(250, 245, 206, 1);
+}
+
 extension HexColor on Color {
   /// String is in the format "aabbcc" or "ffaabbcc" with an optional leading "#".
   static Color fromHex(String hexString) {

@@ -28,7 +28,7 @@ class HomeCardBloc extends Bloc<HomeCardEvent, HomeCardState> {
       title: 'League of Legends',
       subtitle: '',
       imageUrl: 'assets/images/home_card_league_of_legends.png',
-      backgroundColor: const Color.fromRGBO(241, 238, 216, 1),
+      backgroundColor: CustomColors.imperioYellow,
       section: HomeCardSection.eEsports,
     ),
   ];

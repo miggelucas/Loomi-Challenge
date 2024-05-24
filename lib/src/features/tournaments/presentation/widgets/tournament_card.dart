@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:loomi_challenge/src/core/extensions/colors.dart';
 import 'package:loomi_challenge/src/features/tournaments/presentation/model/tournament_card_model.dart';
 
 class TournamentCard extends StatelessWidget {
@@ -16,7 +17,7 @@ class TournamentCard extends StatelessWidget {
       width: 80,
       height: 80,
       decoration: BoxDecoration(
-        color: const Color.fromRGBO(241, 238, 216, 1),
+        color: CustomColors.imperioYellow,
         borderRadius: BorderRadius.circular(24),
       ),
       child: Padding(
