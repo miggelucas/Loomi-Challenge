@@ -35,7 +35,7 @@ class HomePage extends StatelessWidget {
                   const SizedBox(height: 32),
                   const TournamentCarrousel(),
                   const SizedBox(height: 32),
-                  // const TipCarousel()
+                  const TipCarousel()
                 ],
               ),
             ),

@@ -17,6 +17,7 @@ class TipCardComponent extends StatelessWidget {
       width: TipCardComponent.width,
       height: TipCardComponent.heitgh,
       child: Container(
+        clipBehavior: Clip.antiAlias,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(24),
           color: Colors.white,
@@ -33,12 +34,16 @@ class TipCardComponent extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CachedNetworkImage(
-              height: 141.5,
-              fit: BoxFit.fitHeight,
-              imageUrl: model.imageUrl,
-              placeholder: (context, url) => const CircularProgressIndicator(),
-              errorWidget: (context, url, error) => const Icon(Icons.error),
+            Center(
+              child: CachedNetworkImage(
+                height: 141.5,
+                width: TipCardComponent.width,
+                fit: BoxFit.fill,
+                imageUrl: model.imageUrl,
+                placeholder: (context, url) =>
+                    const CircularProgressIndicator(),
+                errorWidget: (context, url, error) => const Icon(Icons.error),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(16.0),
@@ -46,11 +51,18 @@ class TipCardComponent extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(model.title, style: CustomTextSyle.action2),
+                  Text(
+                    model.title,
+                    style: CustomTextSyle.action2,
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 3,
+                  ),
                   const SizedBox(height: 8.0),
                   Text(
                     model.description,
                     style: CustomTextSyle.body3,
+                    overflow: TextOverflow.fade,
+                    maxLines: 3,
                   ),
                 ],
               ),

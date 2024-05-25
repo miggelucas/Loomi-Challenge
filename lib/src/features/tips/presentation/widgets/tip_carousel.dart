@@ -87,6 +87,7 @@ class TipCarouselContent extends StatelessWidget {
           SizedBox(
             height: TipCardComponent.heitgh,
             child: ListView.builder(
+              clipBehavior: Clip.none,
               scrollDirection: Axis.horizontal,
               itemCount: tips.length,
               itemBuilder: (context, index) {
