@@ -47,7 +47,7 @@ class HomeCardSectionList extends StatelessWidget {
                         color: isSelected ? Colors.black : Colors.grey,
                         height: 24,
                       ),
-                      SizedBox(width: 8),
+                      const SizedBox(width: 8),
                       Text(
                         section.name,
                         style: CustomTextSyle.caption3.copyWith(

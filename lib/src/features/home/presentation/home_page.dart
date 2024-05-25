@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loomi_challenge/src/core/extensions/colors.dart';
 import 'package:loomi_challenge/src/features/featured_cards/presentation/widgets/home_main_carrousel.dart';
+import 'package:loomi_challenge/src/features/home/presentation/settings_page.dart';
 import 'package:loomi_challenge/src/features/tips/presentation/widgets/tip_carousel.dart';
 import 'package:loomi_challenge/src/features/tournaments/presentation/widgets/tournament_carrousel.dart';
 
@@ -10,6 +11,10 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const SettingsPage(),
+      appBar: AppBar(
+        backgroundColor: CustomColors.imperioYellow,
+      ),
       body: Stack(
         children: [
           Container(

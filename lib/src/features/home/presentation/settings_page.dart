@@ -1,9 +1,4 @@
-import 'dart:ui';
-
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:loomi_challenge/src/core/extensions/colors.dart';
 import 'package:loomi_challenge/src/core/utils/custom_textstyles.dart';
 
@@ -13,11 +8,13 @@ class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-      child: Center(
-          child: Container(
+        body: Stack(children: [
+      Container(
         color: CustomColors.imperioGrayBackground,
-        child: Column(children: [
+      ),
+      SafeArea(
+        child: Center(
+            child: Column(children: [
           Row(
             children: [
               const Spacer(),
@@ -138,9 +135,9 @@ class SettingsPage extends StatelessWidget {
                   imageAsset: "assets/images/default/shield.png")
             ],
           ),
-        ]),
-      )),
-    ));
+        ])),
+      ),
+    ]));
   }
 }
 
@@ -149,7 +146,7 @@ class SettingsRowButton extends StatelessWidget {
   final String title;
   final String imageAsset;
 
-  SettingsRowButton({
+  const SettingsRowButton({
     Key? key,
     required this.callbackHandle,
     required this.title,

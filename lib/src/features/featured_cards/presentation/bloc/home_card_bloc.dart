@@ -1,6 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
 import 'package:loomi_challenge/src/core/extensions/colors.dart';
 import 'package:loomi_challenge/src/features/featured_cards/model/home_card_model.dart';
 import 'package:loomi_challenge/src/features/featured_cards/model/home_card_section.dart';
@@ -33,7 +32,7 @@ class HomeCardBloc extends Bloc<HomeCardEvent, HomeCardState> {
     ),
   ];
 
-  HomeCardBloc() : super(HomeCardState(HomeCardSection.all, [])) {
+  HomeCardBloc() : super(const HomeCardState(HomeCardSection.all, [])) {
     on<SelectSectionEvent>((event, emit) {
       final filteredCards = event.section == HomeCardSection.all
           ? allCards
