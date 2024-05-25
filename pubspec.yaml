@@ -34,6 +34,15 @@ flutter:
     - assets/images/whistle_icon.png
     - assets/images/eesports_icon.png
     - assets/images/imperio_label.png
+    - assets/images/default/bookmark.png
+    - assets/images/default/chart.png
+    - assets/images/default/coupon.png
+    - assets/images/default/home.png
+    - assets/images/default/question.png
+    - assets/images/default/search.png
+    - assets/images/default/shield.png
+    - assets/images/default/star.png
+    - assets/images/default/users_1.png
 
   fonts:
     - family: Montserrat

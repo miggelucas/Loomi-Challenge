@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class CustomColors {
   static Color get imperioYellow => const Color.fromRGBO(250, 245, 206, 1);
+  static Color get imperioGrayBackground => HexColor.fromHex("#FDFDFD");
 }
 
 extension HexColor on Color {

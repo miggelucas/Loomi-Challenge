@@ -22,6 +22,13 @@ class CustomTextSyle {
         fontWeight: FontWeight.w700,
       );
 
+  static TextStyle get caption1 => const TextStyle(
+        color: Colors.black,
+        fontFamily: "Montserrat",
+        fontSize: 16,
+        fontWeight: FontWeight.w500,
+      );
+
   static TextStyle get caption2 => const TextStyle(
         color: Colors.black,
         fontFamily: "Montserrat",

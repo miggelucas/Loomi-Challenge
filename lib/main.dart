@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loomi_challenge/src/core/utils/service_locator.dart';
 import 'package:loomi_challenge/src/features/home/presentation/home_page.dart';
+import 'package:loomi_challenge/src/features/home/presentation/settings_page.dart';
 
 void main() {
   setupLocator();
@@ -12,6 +13,6 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: HomePage());
+    return MaterialApp(home: SettingsPage());
   }
 }
